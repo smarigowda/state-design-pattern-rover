@@ -3,6 +3,7 @@
         "module": "commonjs",
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
+        "types": ["mocha"],
         "target": "es6",
         "noImplicitAny": true,
         "moduleResolution": "node",
