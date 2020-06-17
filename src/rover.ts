@@ -1,4 +1,4 @@
-import { Facing } from "./facing.interface";
+import { Facing } from "./states/facing.interface";
 
 export default class Rover {
   currentFacing: Facing;

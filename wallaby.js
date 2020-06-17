@@ -1,6 +1,6 @@
 module.exports = function (wallaby) {
   return {
-    files: ["src/*.ts"],
+    files: ["src/**/*.ts"],
 
     tests: ["test/*.spec.ts"],
 

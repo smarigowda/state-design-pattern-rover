@@ -1,6 +1,8 @@
 import * as chai from "chai";
 import Rover from "../src/rover";
-import NorthFacing from "../src/northfacing";
+import NorthFacing from "../src/states/northfacing";
+import SouthFacing from "../src/states/southfacing";
+import WestFacing from "../src/states/westfacing";
 
 const assert = chai.assert;
 
@@ -9,11 +11,18 @@ let rover;
 describe("Rover Test Scenario", function () {
   before("initialize rover", function () {});
   it("Test 1: Move Left", function () {
-    rover = new Rover(0,0);
+    rover = new Rover(0, 0);
     const nothFacing = new NorthFacing(rover);
     rover.setFacing(nothFacing);
     const commands = ["l"];
     rover.move(commands);
+    if (rover.currentFacing instanceof NorthFacing) {
+      console.log("PASS");
+    }
+    if (rover.currentFacing instanceof WestFacing) {
+      console.log("PASS");
+    }
+    rover; //?
     // assert.equal(rover.facing, "W");
   });
   it.skip("Test 2: Move Left", function () {
