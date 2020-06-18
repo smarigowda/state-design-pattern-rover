@@ -1,0 +1,41 @@
+@startuml
+[*] --> North
+
+North -> East : right
+North -> West : left
+North -> North : forward
+North -> North : backward
+North : left()
+North : right()
+North : forward()
+North : backward()
+
+
+South -down-> East : left
+South -down-> West : right
+South -> South: forward
+South -> South: backward
+South : left()
+South : right()
+South : forward()
+South : backward()
+
+East -down-> North: left
+East -down-> South: right
+East -> East: forward
+East -> East: backward
+East : left()
+East : right()
+East : forward()
+East : backward()
+
+West -> North: right
+West -> South: left
+West -> West: forward
+West -> West: backward
+West : left()
+West : right()
+West : forward()
+West : backward()
+
+@enduml
