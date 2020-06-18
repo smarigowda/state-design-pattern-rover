@@ -1,5 +1,7 @@
 import { Facing } from "./facing.interface";
 import Rover from "../rover";
+import EastFacing from "./eastfacing";
+import WestFacing from "./westfacing";
 
 export default class SouthFacing implements Facing {
   rover: Rover;
@@ -9,15 +11,15 @@ export default class SouthFacing implements Facing {
   }
 
   moveForward() {
-    console.log("no change in facing, increment x by 1");
+    this.rover.decrementYCoordinate();
   }
   moveBackwards() {
-    console.log("no change in facing, decrement x by 1");
+    this.rover.incrementYCoordinate();
   }
   moveLeft() {
-    console.log("change facing to North, no change in coordiantes");
+    this.rover.setFacing(new EastFacing(this.rover));
   }
   moveRight() {
-    console.log("chang facing to East, no change in coordiates");
+    this.rover.setFacing(new WestFacing(this.rover));
   }
 }

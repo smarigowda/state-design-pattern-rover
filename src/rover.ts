@@ -12,11 +12,17 @@ export default class Rover {
   setFacing(newFacing: Facing) {
     this.currentFacing = newFacing;
   }
-  setXCoordinate(xCoordinate: number) {
-    this.xCoordinate = xCoordinate;
+  incrementXCoordinate() {
+    this.xCoordinate++;
   }
-  setYCoordinate(yCoordinate: number) {
-    this.yCoordinate = yCoordinate;
+  incrementYCoordinate() {
+    this.yCoordinate++;
+  }
+  decrementXCoordinate() {
+    this.xCoordinate--;
+  }
+  decrementYCoordinate() {
+    this.yCoordinate--;
   }
   getXCoordinate() {
     return this.xCoordinate;
@@ -31,44 +37,15 @@ export default class Rover {
         case "l":
           this.currentFacing.moveLeft();
           break;
+        case "r":
+          this.currentFacing.moveRight();
+          break;
         case "f":
           this.currentFacing.moveForward();
           break;
+        case "b":
+          this.currentFacing.moveBackwards();
       }
     });
   }
-  //   moveForward() {
-  //     switch (this.facing) {
-  //       case "N":
-  //         this.y++;
-  //         break;
-  //       case "S":
-  //         this.y--;
-  //         break;
-  //       case "E":
-  //         this.x++;
-  //         break;
-  //       case "W":
-  //         this.x--;
-  //         break;
-  //     }
-  //   }
-  //   moveBackwards() {}
-  //   moveLeft() {
-  //     switch (this.facing) {
-  //       case "N":
-  //         this.facing = "W";
-  //         break;
-  //       case "S":
-  //         this.facing = "E";
-  //         break;
-  //       case "E":
-  //         this.facing = "N";
-  //         break;
-  //       case "W":
-  //         this.facing = "S";
-  //         break;
-  //     }
-  //   }
-  //   moveRight() {}
 }
