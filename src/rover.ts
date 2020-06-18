@@ -32,7 +32,6 @@ export default class Rover {
   }
   move(commands: string[]) {
     commands.forEach((command) => {
-      console.log(command);
       switch (command) {
         case "l":
           this.currentFacing.moveLeft();

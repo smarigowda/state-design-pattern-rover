@@ -5,8 +5,7 @@ import SouthFacing from "../src/states/southfacing";
 import WestFacing from "../src/states/westfacing";
 import EastFacing from "../src/states/eastfacing";
 
-const assert = chai.assert; //?
-
+const assert = chai.assert;
 let rover;
 
 describe("Rover Test Scenario", function () {
