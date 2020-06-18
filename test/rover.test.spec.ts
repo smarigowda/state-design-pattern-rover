@@ -11,7 +11,7 @@ let rover;
 
 describe("Rover Test Scenario", function () {
   before("initialize rover", function () {});
-  it("Test 1: Move Left", function () {
+  it("Test 1: Move Left 360 degrees", function () {
     rover = new Rover(0, 0);
     const nothFacing = new NorthFacing(rover);
     rover.setFacing(nothFacing);
@@ -26,7 +26,7 @@ describe("Rover Test Scenario", function () {
     assert.equal(rover.getXCoordinate(), 0);
     assert.equal(rover.getYCoordinate(), 0);
   });
-  it("Test 2: Move Right", function () {
+  it("Test 2: Move Right 360 degrees", function () {
     rover = new Rover(0, 0);
     const nothFacing = new NorthFacing(rover);
     rover.setFacing(nothFacing);
@@ -40,5 +40,53 @@ describe("Rover Test Scenario", function () {
     assert.isTrue(rover.currentFacing instanceof NorthFacing);
     assert.equal(rover.getXCoordinate(), 0);
     assert.equal(rover.getYCoordinate(), 0);
+  });
+  it("Test 3: North -> Forward -> Backwards", function () {
+    rover = new Rover(0, 0);
+    const facing = new NorthFacing(rover);
+    rover.setFacing(facing);
+    rover.move(["f", "f", "f", "f"]);
+    assert.isTrue(rover.currentFacing instanceof NorthFacing);
+    assert.equal(rover.getYCoordinate(), 4);
+    rover.move(["b", "b", "b", "b", "b"]);
+    assert.equal(rover.getYCoordinate(), -1);
+    assert.equal(rover.getXCoordinate(), 0);
+    assert.isTrue(rover.currentFacing instanceof NorthFacing);
+  });
+  it("Test 4: South -> Forward -> Backwards", function () {
+    rover = new Rover(0, 0);
+    const facing = new SouthFacing(rover);
+    rover.setFacing(facing);
+    rover.move(["f", "f", "f", "f"]);
+    assert.isTrue(rover.currentFacing instanceof SouthFacing);
+    assert.equal(rover.getYCoordinate(), -4);
+    rover.move(["b", "b", "b", "b", "b"]);
+    assert.equal(rover.getYCoordinate(), 1);
+    assert.equal(rover.getXCoordinate(), 0);
+    assert.isTrue(rover.currentFacing instanceof SouthFacing);
+  });
+  it("Test 4: East -> Forward -> Backwards", function () {
+    rover = new Rover(0, 0);
+    const facing = new EastFacing(rover);
+    rover.setFacing(facing);
+    rover.move(["f", "f", "f", "f"]);
+    assert.isTrue(rover.currentFacing instanceof EastFacing);
+    assert.equal(rover.getXCoordinate(), 4);
+    rover.move(["b", "b", "b", "b", "b"]);
+    assert.equal(rover.getXCoordinate(), -1);
+    assert.equal(rover.getYCoordinate(), 0);
+    assert.isTrue(rover.currentFacing instanceof EastFacing);
+  });
+  it("Test 4: West -> Forward -> Backwards", function () {
+    rover = new Rover(0, 0);
+    const facing = new WestFacing(rover);
+    rover.setFacing(facing);
+    rover.move(["f", "f", "f", "f"]);
+    assert.isTrue(rover.currentFacing instanceof WestFacing);
+    assert.equal(rover.getXCoordinate(), -4);
+    rover.move(["b", "b", "b", "b", "b"]);
+    assert.equal(rover.getXCoordinate(), 1);
+    assert.equal(rover.getYCoordinate(), 0);
+    assert.isTrue(rover.currentFacing instanceof WestFacing);
   });
 });
