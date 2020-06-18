@@ -1,6 +1,6 @@
 # Demo of State Design Pattern - TypeScript
 
-## The Rover Coding Kata to Solve
+## The Rover Coding Kata
 
 You are given an initial startig point of a rover `(x,y)` and the direction it is facing.
 
@@ -26,6 +26,10 @@ Implement the commands that turn the rover `right/ left`
 - Each state will have an instance of the `Rover` given to it when the state object is created, so that state of the rover can be changed dynamically by calling that method from within the state object.
 
 - Write tests as along the way `TDD`
+
+- Run the tests
+
+  - `npm run test`
 
 ## State Transition Diagram
 
