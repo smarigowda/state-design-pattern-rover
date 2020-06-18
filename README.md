@@ -31,6 +31,10 @@ Implement the commands that turn the rover `right/ left`
 
   - `npm run test`
 
+## Screencast of Running and Debugging Jest test
+
+![](./doc/run-debug-jest-tests.mp4)
+
 ## State Transition Diagram
 
 ![](./doc/rover-states-diagram.jpg)
