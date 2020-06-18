@@ -1,9 +1,9 @@
 import { Facing } from "./states/facing.interface";
 
 export default class Rover {
-  currentFacing: Facing;
-  xCoordinate: number = 0;
-  yCoordinate: number = 0;
+  private currentFacing: Facing;
+  private xCoordinate: number = 0;
+  private yCoordinate: number = 0;
 
   constructor(xCoordinate: number, yCoordinate: number) {
     this.xCoordinate = xCoordinate;
