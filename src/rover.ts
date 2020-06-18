@@ -1,7 +1,7 @@
 import { Facing } from "./states/facing.interface";
 
 export default class Rover {
-  private currentFacing: Facing;
+  currentFacing: Facing;
   private xCoordinate: number = 0;
   private yCoordinate: number = 0;
 

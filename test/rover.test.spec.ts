@@ -9,7 +9,6 @@ const assert = chai.assert;
 let rover;
 
 describe("Rover Test Scenario", function () {
-  before("initialize rover", function () {});
   it("Test 1: Move Left 360 degrees", function () {
     rover = new Rover(0, 0);
     const nothFacing = new NorthFacing(rover);

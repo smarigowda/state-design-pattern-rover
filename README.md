@@ -28,4 +28,9 @@ Implement the commands that turn the rover `right/ left`
 - Write tests as along the way `TDD`
 
 ## State Transition Diagram
+
 ![](./doc/rover-states-diagram.jpg)
+
+## Jest Test Run
+
+![](./doc/jest-test-run.jpg)
